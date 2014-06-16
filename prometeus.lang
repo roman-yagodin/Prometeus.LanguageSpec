@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Author: Roman M. Yagodin; <roman.yagodin@gmail.com>
+	Copyright (C) 2011-2014 Roman M. Yagodin; <roman.yagodin@gmail.com>
+-->
+
+<language id="prometey" _name="Prometey" version="2.0" _section="Markup">
+  <metadata>
+    <property name="mimetypes">text/x-prometeus-test</property>
+    <property name="globs">*.test;</property>
+    <property name="line-comment-start">//</property>
+  </metadata>
+  <styles>
+    <style id="comment"       _name="Comment"            map-to="def:comment"/>
+    <style id="string"        _name="String"             map-to="def:string"/>
+    <style id="test"          _name="Test"               map-to="def:statement"/>
+    <style id="section"       _name="Section"            map-to="def:type"/>
+    <style id="question"      _name="Question"           map-to="def:string"/>
+    <style id="right-answer"  _name="Right answer"       map-to="def:statement"/>
+    <style id="parameter"     _name="Parameter"          map-to="def:preprocessor"/>
+    <style id="number"        _name="Number"             map-to="def:decimal"/>
+    <style id="boolean"       _name="Boolean"            map-to="def:special-constant"/>
+    <style id="decimal"       _name="Decimal number"     map-to="def:special-constant"/>
+    <style id="hexadecimal"   _name="Hexadecimal number" map-to="def:special-constant"/>
+    <style id="real"          _name="Real number"        map-to="def:special-constant"/>
+    <style id="debugs"        _name="Debug Code"         map-to="def:comment"/>
+    <style id="html-entity"   _name="HTML Entity"        map-to="def:preprocessor"/>
+    <style id="html-tag"      _name="HTML Tag"           map-to="xml:tag"/> 
+    <style id="unquoted"      _name="unquoted"           map-to="def:error"/>
+  </styles>
+
+  <default-regex-options case-sensitive="false"/>
+
+  <definitions>
+    <context id="prometey">
+      <include>
+
+        <!-- single line comments // -->
+        <context id="comment" style-ref="comment" end-at-line-end="true">
+		<start>(?&lt;![^\s])(//)</start>
+          	<include>
+			<context ref="def:in-line-comment"/>
+        	</include>
+        </context>
+
+        <!-- text inside elements -->
+	<context id="text"> 
+		<include>
+			<context ref="decimal" />
+			<context ref="hexadecimal" />
+			<context ref="real" />
+			<context ref="boolean" />
+			<context ref="html-entity" />
+			<context ref="unquoted" />
+		</include>	
+	</context>
+
+        <!-- test # -->
+        <context id="test" style-ref="test" end-at-line-end="true" once-only="true">
+        	<start>(?&lt;![^\s])(\#)</start>
+		<include>
+			<context ref="text" />
+		</include>	
+        </context>
+ 	
+	<!-- sections @ -->
+        <context id="section" style-ref="section" end-at-line-end="true">
+        	<start>(?&lt;![^\s])(\@)</start>
+		<include>
+			<context ref="text" />
+		</include>	
+        </context>
+
+	<!-- questions ? -->
+        <context id="question" style-ref="question" end-at-line-end="true">
+          <start>(?&lt;![^\s])(\?)</start>
+	  <include>
+		<context ref="text" />
+	  </include>	
+        </context>
+
+	<!-- right answers * -->
+        <context id="right-answer" style-ref="right-answer" end-at-line-end="true">
+	<!-- <start>(?&lt;![^\s])(\*)(?![^\s])</start> -->
+          <start>(?&lt;![^\s])(\*)</start>
+          <include>
+		<context ref="text" />
+	  </include>	
+        </context>
+
+	<!-- parameters like : тип вопроса = -->
+
+ 	<context id="parameter" style-ref="parameter">
+          <start>(?&lt;![^\s])(\:\s*)(описание|описание теста|экзамен|время|время тестирования|балл|проходной балл|перемешивать|перемешивать секции|курс|вопросы|вопросов|представлять вопросов|перемешивать|тип|тип вопроса|вес|порог|комментарий|ссылка|рисунок|вариант|тег)(?![^\s])</start>		
+	  <end>=</end>
+        </context>
+
+	<!-- booleans like true/false or да / нет -->
+ 	<context id="boolean" style-ref="boolean">
+		<keyword>да</keyword>
+		<keyword>нет</keyword>
+		<keyword>true</keyword>
+		<keyword>false</keyword>
+	</context>
+	
+	<!-- decimal numbers -->
+	<context id="decimal" style-ref="decimal">
+		<match extended="true">
+	        (?&lt;![\w\.])
+	        [0-9]+[uUlL]*
+        	(?![\w\.])
+		</match>
+	</context>
+
+	<!-- hexadecimal numbers -->
+	<context id="hexadecimal" style-ref="hexadecimal">
+      <match extended="true">
+        (?&lt;![\w\.])
+        0[xX][a-fA-F0-9]+[uUlL]*
+        (?![\w\.])
+      </match>
+    </context>
+
+    <!-- real numbers -->
+    <context id="real" style-ref="real">
+      <match extended="true">
+        (?&lt;![\w\.])
+        ((\.[0-9]+|[0-9]+\.[0-9]*)([Ee][+-]?[0-9]*)?[FfDdMm]?|
+         ([0-9]+[Ee][+-]?[0-9]*)[FfDdMm]? |
+         ([0-9]+)[FfDdMm])
+        (?![\w\.])
+      </match>
+    </context>
+
+	<!-- html / xml entities like &quot; &amp; &#160; etc. -->
+	<define-regex id="entity-name">[a-zA-Z#_][a-zA-Z0-9_]*</define-regex>
+	<context id="html-entity" style-ref="html-entity">
+            <match>&amp;\%{entity-name};</match>
+        </context>
+
+	<!-- html / xml tags --> 
+
+	<define-regex id="name">[a-zA-Z_][a-zA-Z0-9.:_-]*</define-regex>
+	<context id="attribute-name" style-ref="attribute-name">
+            <match>\b\%{name}\s*=</match>
+        </context>
+
+        <context id="html-start-tag" style-ref="html-tag">
+            <start>&lt;(?!/)</start>
+            <end>/?&gt;</end>
+	    <include>
+		<context ref="attribute-name" />	
+	    </include>
+	</context>
+
+ 	<context id="html-end-tag" style-ref="html-tag">
+            <start>&lt;/</start>
+            <end>&gt;</end>
+	</context>
+
+	<!-- some characters like ", &, >, < must be placed very carefully, so we consider them as "errors" -->
+	<!-- this must me last context, in case other including those characters in right contructs -->
+        <context id="unquoted" style-ref="unquoted">
+          <match extended="true">"&amp;|&lt;|&gt;</match>
+        </context>
+
+      </include>
+    </context>
+  </definitions>
+</language>
