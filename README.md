@@ -14,7 +14,7 @@ Prometeus.LanguageSpec goal is to create GtkSourceView language specification fo
 
 1. Install GEdit using your package manager. In Debian it should be: `sudo apt-get install gedit` 
 
-2. Copy prometeus.lang file in /usr/share/gtksourceview-2.0/language-specs and /usr/share/gtksourceview-3.0/language-specs. It would require superuser privileges: `sudo cp -f prometeus.lang /usr/share/gtksourceview-2.0/language-specs`
+2. Copy prometeus.lang file in /usr/share/gtksourceview-2.0/language-specs and /usr/share/gtksourceview-3.0/language-specs - just run `./install.sh` in terminal (it would require superuser privileges). 
 
 # Test if it works
 
