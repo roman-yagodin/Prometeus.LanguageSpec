@@ -2,7 +2,7 @@
 
 Prometeus.LanguageSpec goal is to create GtkSourceView language specification for the [Prometeus](http://www.prometeus.ru/) distant learning system to allow editing test files in GEdit or other editor based on GtkSourceView with syntax highlighting.
 
-![Screenshot](https://github.com/roman-yagodin/Prometeus.LanguageSpec/images/screenshot_01.jpg "Using Prometeus language spec in GEdit for Windows")
+![Screenshot](https://raw.githubusercontent.com/roman-yagodin/Prometeus.LanguageSpec/master/images/screenshot_01.jpg "Using Prometeus language spec in GEdit for Windows")
 
 # Install (Windows)
 
