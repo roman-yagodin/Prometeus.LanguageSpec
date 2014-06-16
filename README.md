@@ -8,13 +8,17 @@ Prometeus.LanguageSpec goal is to create GtkSourceView language specification fo
 
 1. Install [GEdit for Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe). You can always get latest version here: http://projects.gnome.org/gedit/
 
-2. Copy prometeus.lang file in C:\Program Files\gedit\share\gtksourceview-2.0\language-specs. Note that in 64-bit Windows gedit would install to C:\Program Files (x86)\gedit.
+2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package.
+
+3. Copy `prometeus.lang` file in `C:\Program Files\gedit\share\gtksourceview-2.0\language-specs` or `C:\Program Files (x86)\gedit\share\gtksourceview-2.0\language-specs`. To do this, run `install.cmd`.
 
 # Install (Linux)
 
 1. Install GEdit using your package manager. In Debian it should be: `sudo apt-get install gedit` 
 
-2. Copy prometeus.lang file in /usr/share/gtksourceview-2.0/language-specs and /usr/share/gtksourceview-3.0/language-specs - just run `./install.sh` in terminal (it would require superuser privileges). 
+2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package. 
+
+3. Copy `prometeus.lang` file in /usr/share/gtksourceview-2.0/language-specs and /usr/share/gtksourceview-3.0/language-specs. To do it, just run `./install.sh` in a terminal (it would require superuser privileges).
 
 # Test if it works
 
@@ -22,9 +26,9 @@ Open file `sample.<culture-code>.test` file in GEdit - its content should be col
  
 # Usage tips
 
-Language specification in designed to use with "Full" test markup shema but also works file if you are using "Simplified" markup shema. Not expect miracles - "Prometeus" test markup language is significantly informal and allow use HTML markup - is not always safe. Using syntax highlight makes formatting errors in the test much less frequent.
+Language specification in designed to use with "Full" test markup shema but also works file if you are using "Simplified" markup shema. Don't expect miracles - "Prometeus" test markup language is significantly informal and allow use HTML markup - it's not always safe. But using syntax highlight makes formatting errors in the test much less frequent.
 
-In the current specification version, HTML entity markup is realized, so entities like &amp;nbsp;, &amp;amp;, &amp;#160; are highlighted. HTML tags and attributes are not highlighted, and angle brackets "<" и ">" highlighted as errors - this one to drive maximum author attention HTML markup in the test.
+In the current specification version, HTML entity markup is realized, so entities like &amp;nbsp;, &amp;amp;, &amp;#160; are highlighted. HTML tags and angle brackets "<" и ">" highlighted as errors - this one to drive author attention HTML markup in the test.
 
 # Use with "Prometeus" test converter
 
