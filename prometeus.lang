@@ -5,7 +5,7 @@
 	Copyright (C) 2011-2014 Roman M. Yagodin; <roman.yagodin@gmail.com>
 -->
 
-<language id="prometey" _name="Prometey" version="2.0" _section="Markup">
+<language id="prometeus" _name="Prometeus" version="2.0" _section="Markup">
   <metadata>
     <property name="mimetypes">text/x-prometeus-test</property>
     <property name="globs">*.test;</property>
@@ -33,7 +33,7 @@
   <default-regex-options case-sensitive="false"/>
 
   <definitions>
-    <context id="prometey">
+    <context id="prometeus">
       <include>
 
         <!-- single line comments // -->
@@ -89,7 +89,7 @@
 	  </include>	
         </context>
 
-	<!-- parameters like : тип вопроса = -->
+	<!-- parameters -->
 
  	<context id="parameter" style-ref="parameter">
           <start>(?&lt;![^\s])(\:\s*)(описание|описание теста|экзамен|время|время тестирования|балл|проходной балл|перемешивать|перемешивать секции|курс|вопросы|вопросов|представлять вопросов|перемешивать|тип|тип вопроса|вес|порог|комментарий|ссылка|рисунок|вариант|тег)(?![^\s])</start>		
@@ -162,7 +162,7 @@
 	<!-- some characters like ", &, >, < must be placed very carefully, so we consider them as "errors" -->
 	<!-- this must me last context, in case other including those characters in right contructs -->
         <context id="unquoted" style-ref="unquoted">
-          <match extended="true">"&amp;|&lt;|&gt;</match>
+          <match extended="true">'|"|&amp;|&lt;/?\%{name}|&lt;|/&gt;|&gt;</match>
         </context>
 
       </include>
