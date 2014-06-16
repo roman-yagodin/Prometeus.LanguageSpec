@@ -22,7 +22,7 @@ Open file sample.test in GEdit - its content should be colored accoding to "Prom
 
 Language specification in designed to use with "Full" test markup shema but also works file if you are using "Simplified" markup shema. Not expect miracles - "Prometeus" test markup language is significantly informal and allow use HTML markup - is not always safe. Using syntax highlight makes formatting errors in the test much less frequent.
 
-In the current specification version, HTML entity markup is realized, so entities like &&nbsp;, &&amp;, &&#160; are highlighted. HTML tags and attributes are not highlighted, and angle brackets "<" и ">" highlighted as errors - this one to drive maximum author attention HTML markup in the test.
+In the current specification version, HTML entity markup is realized, so entities like &amp;nbsp;, &amp;amp;, &amp;#160; are highlighted. HTML tags and attributes are not highlighted, and angle brackets "<" и ">" highlighted as errors - this one to drive maximum author attention HTML markup in the test.
 
 # Use with "Prometeus" test converter
 
