@@ -18,7 +18,7 @@ Prometeus.LanguageSpec goal is to create GtkSourceView language specification fo
 
 # Test if it works
 
-Open file sample.test in GEdit - its content should be colored accoding to "Prometeus" test markup language.
+Open file `sample.<culture-code>.test` file in GEdit - its content should be colored accoding to "Prometeus" test markup language.
  
 # Usage tips
 
