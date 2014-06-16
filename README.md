@@ -34,8 +34,15 @@ In the current specification version, HTML entity markup is realized, so entitie
 
 Before use "Prometeus" test converter utility:
 
-1. Change test file extension from .test to .txt. 
+1. Change test file extension from `.test` to `.txt`. 
 2. Make sure you are using Windows-style (CR+LF) line endings in file. 
 3. For russian / cyrillic users: also make sure that file is in Windows-1251 encoding.
 
 **Note:** For last two points you can use GEdit to save test file with desired line endings and encoding - just specify them in Save-As dialog.
+
+# TODO
+
+* Add README in russian
+* Create Windows installer using NSIS
+* More clear HTML/XML support
+* Structurize contexts in the specification
