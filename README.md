@@ -1,8 +1,8 @@
 # About Prometeus.LanguageSpec
 
-Prometeus.LanguageSpec goal is to create GtkSourceView language specification for the [Prometeus](http://www.prometeus.ru/) distant learning system to allow editing test files in GEdit or other editor based on GtkSourceView with syntax highlighting.
+*Prometeus.LanguageSpec* goal is to create GtkSourceView language specification for the [Prometeus](http://www.prometeus.ru/) distant learning system to allow editing test files in GEdit or other editor based on GtkSourceView with syntax highlighting.
 
-![Screenshot](https://raw.githubusercontent.com/roman-yagodin/Prometeus.LanguageSpec/master/images/screenshot_01.jpg "Using Prometeus language spec in GEdit for Windows")
+![Screenshot](https://raw.githubusercontent.com/roman-yagodin/Prometeus.LanguageSpec/master/images/screenshot_01.jpg "Using Prometeus language spec in GEdit 2 for Windows")
 
 # Automatic install (Windows)
 
@@ -12,7 +12,7 @@ Use [Windows installer](https://github.com/roman-yagodin/Prometeus.LanguageSpec/
 
 1. Install [GEdit for Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe). You can always get latest version here: http://projects.gnome.org/gedit/
 
-2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package.
+2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) source package.
 
 3. Copy `prometeus.lang` file in `C:\Program Files\gedit\share\gtksourceview-2.0\language-specs` or `C:\Program Files (x86)\gedit\share\gtksourceview-2.0\language-specs` - or just run `install.cmd`.
 
@@ -20,7 +20,7 @@ Use [Windows installer](https://github.com/roman-yagodin/Prometeus.LanguageSpec/
 
 1. Install GEdit using your package manager. In Debian it should be: `sudo apt-get install gedit` 
 
-2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package. 
+2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) source package. 
 
 3. Copy `prometeus.lang` file in `/usr/share/gtksourceview-2.0/language-specs` and `/usr/share/gtksourceview-3.0/language-specs` - or just run `./install.sh` in a terminal (it would require superuser privileges).
 
@@ -34,7 +34,7 @@ Language specification in designed to use with "Full" test markup shema but also
 
 In the current specification version, HTML entity markup is realized, so entities like &amp;nbsp;, &amp;amp;, &amp;#160; are highlighted. HTML tags and angle brackets "<" и ">" highlighted as errors - this one to drive author attention HTML markup in the test.
 
-# Use with "Prometeus" test converter
+# Using with "Prometeus" test converter
 
 Before use "Prometeus" test converter utility:
 
