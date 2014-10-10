@@ -10,7 +10,7 @@ Use [Windows installer](https://github.com/roman-yagodin/Prometeus.LanguageSpec/
 
 # Manual install (Windows)
 
-1. Install [GEdit for Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe). You can always get latest version here: http://projects.gnome.org/gedit/
+1. Install [GEdit for Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe). You can always get latest stable version here: http://projects.gnome.org/gedit/
 
 2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) source package.
 
