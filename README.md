@@ -4,21 +4,25 @@ Prometeus.LanguageSpec goal is to create GtkSourceView language specification fo
 
 ![Screenshot](https://raw.githubusercontent.com/roman-yagodin/Prometeus.LanguageSpec/master/images/screenshot_01.jpg "Using Prometeus language spec in GEdit for Windows")
 
-# Install (Windows)
+# Automatic install (Windows)
+
+Use [Windows installer](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases/tag/v0.3.1) to install Prometeus.LanguageSpec,  GEdit 2.30 or GEdit 3.14 with Prometeus syntax highlighting enabled.
+
+# Manual install (Windows)
 
 1. Install [GEdit for Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe). You can always get latest version here: http://projects.gnome.org/gedit/
 
 2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package.
 
-3. Copy `prometeus.lang` file in `C:\Program Files\gedit\share\gtksourceview-2.0\language-specs` or `C:\Program Files (x86)\gedit\share\gtksourceview-2.0\language-specs`. To do this, run `install.cmd`.
+3. Copy `prometeus.lang` file in `C:\Program Files\gedit\share\gtksourceview-2.0\language-specs` or `C:\Program Files (x86)\gedit\share\gtksourceview-2.0\language-specs` - or just run `install.cmd`.
 
-# Install (Linux)
+# Manual install (Linux)
 
 1. Install GEdit using your package manager. In Debian it should be: `sudo apt-get install gedit` 
 
 2. Unpack [release](https://github.com/roman-yagodin/Prometeus.LanguageSpec/releases) package. 
 
-3. Copy `prometeus.lang` file in /usr/share/gtksourceview-2.0/language-specs and /usr/share/gtksourceview-3.0/language-specs. To do it, just run `./install.sh` in a terminal (it would require superuser privileges).
+3. Copy `prometeus.lang` file in `/usr/share/gtksourceview-2.0/language-specs` and `/usr/share/gtksourceview-3.0/language-specs` - or just run `./install.sh` in a terminal (it would require superuser privileges).
 
 # Test if it works
 
@@ -40,9 +44,9 @@ Before use "Prometeus" test converter utility:
 
 **Note:** For last two points you can use GEdit to save test file with desired line endings and encoding - just specify them in Save-As dialog.
 
-# TODO
+# TO-DO
 
-* Add README in russian
-* Create Windows installer using NSIS
-* More clear HTML/XML support
-* Structurize contexts in the specification
+- [ ] Add README in russian
+- [x] Create Windows installer using NSIS
+- [ ] More clear HTML/XML support
+- [ ] Structurize contexts in the specification
